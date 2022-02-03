@@ -67,7 +67,7 @@ export default function Main() {
             "https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=" +
                 address +
                 "&address=" +
-                "0x94f79720db549b0bc83982b728de8f358606f811" +
+                account +
                 "&page=1&offset=100&startblock=13616789&endblock=14135189&sort=asc&apikey=" +
                 addresses.ETHERMYAPI
         );
