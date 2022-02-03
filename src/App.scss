@@ -1,0 +1,131 @@
+/* CSS Document */
+
+/*
+*
+*
+*
+  color / $white
+  font / @import 
+  general / html
+  dropdown / .dropdown-custom.btn
+  breadcumb / .breadcumb
+  home / .subheading
+  icon scroll / .icon-scroll-wraper
+  footer / footer
+  portofolio / AppContainer
+  contact / .form-side
+  news / .post-content
+  create file / .d-create-file
+  activity / .filter__l
+  feature box / .feature-box .inner
+  column nft / .nft_coll
+  countdown / .de_countdown
+  author list / .author_list
+  icon box / .icon-box 
+  carousel / .d-carousel
+  filter / .items_filter
+  colection / #profile_banner 
+  item details / .item_info
+  wallet / .box-url 
+  all icon / .demo-icon-wrap-s2 
+  element / .card-header
+  media all / @media only screen and (max-width: 1199px)
+*/
+
+/*color*/
+$white: #fff;
+$gray: grey;
+$black: #111;
+$general: #727272;
+$black_soft: #333;
+$black_col: rgb(193, 191, 255);
+$black_more: #0f0f0f;
+$black_background: #050505;
+$color: rgb(186, 206, 255);
+$color_disable: rgb(142, 174, 255);
+$color_more: rgb(0, 4, 255);
+
+/*general*/
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "DM Sans", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: "Microsoft Sans Serif";
+    color: $general;
+    word-spacing: 0px;
+    background: rgb(222, 228, 235) !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+.noselect {
+    -webkit-touch-callout: none !important; /* iOS Safari */
+    -webkit-user-drag: none; /* Safari drag */
+    -webkit-user-select: none !important; /* Safari select */
+    -khtml-user-select: none !important; /* Konqueror HTML */
+    -moz-user-select: none !important; /* Old versions of Firefox */
+    -ms-user-select: none !important; /* Internet Explorer/Edge */
+    user-select: none !important; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+.br {
+    display: block;
+    white-space: pre-wrap;
+}
+strong {
+    font-weight: bold;
+}
+.walletButton {
+    border: 2px solid transparent;
+    outline: none;
+    background-color: $color;
+    color: $color_more;
+    padding: 15px 30px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: 0.4s all;
+    &:hover {
+        border: 2px solid $color_more;
+    }
+}
+.logoImg {
+    width: 100%;
+}
+.claimButton {
+    padding: 10px 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: 0.4s all;
+    border: 2px solid transparent;
+    outline: none;
+    background-color: $color;
+    color: $color_more;
+    &:hover {
+        border: 2px solid $color_more;
+    }
+    &:disabled {
+        opacity: 0.7;
+        color: $color_disable;
+        border: 2px solid transparent;
+    }
+}
+.status {
+    width: 20px;
+}
+.MuiGrid-root {
+    margin-top: 20px !important;
+}
+.text-center {
+    text-align: center;
+}
+.spacer-single {
+    height: 20px;
+}
+.spacer-double {
+    height: 50px;
+}
