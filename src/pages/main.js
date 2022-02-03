@@ -68,7 +68,7 @@ export default function Main() {
                 address +
                 "&address=" +
                 account +
-                "&page=1&offset=100&startblock=13616789&endblock=14135189&sort=asc&apikey=" +
+                "&page=1&offset=100&startblock=12925589&endblock=14135189&sort=asc&apikey=" +
                 addresses.ETHERMYAPI
         );
     };
