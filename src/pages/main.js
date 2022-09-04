@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useWallet } from "use-wallet";
+import { ethers } from "ethers";
 import { Grid, Container } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Table from "@mui/material/Table";
@@ -63,12 +64,19 @@ export default function Main() {
     }, [data]);
 
     const ETHERrequestAPI = async (address) => {
+        const provider = new ethers.providers.JsonRpcProvider(
+            "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"
+        );
+        const currentBlocknum = await provider.getBlockNumber();
+
         return await axios.post(
             "https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=" +
                 address +
                 "&address=" +
                 account +
-                "&page=1&offset=100&startblock=12925589&endblock=14135189&sort=asc&apikey=" +
+                "&page=1&offset=100&startblock=12925589&endblock=" +
+                currentBlocknum +
+                "&sort=asc&apikey=" +
                 addresses.ETHERMYAPI
         );
     };
@@ -76,7 +84,6 @@ export default function Main() {
     const getBalance = async () => {
         var bump = [];
         const ShibaInuResult = await ETHERrequestAPI(addresses.ShibaInu);
-        console.log(ShibaInuResult);
         const ShibaInuObj = {
             name: "Shiba Inu",
             address: addresses.ShibaInu,
@@ -84,7 +91,6 @@ export default function Main() {
         };
         bump.push(ShibaInuObj);
         const SpellResult = await ETHERrequestAPI(addresses.Spell);
-        console.log(SpellResult);
         const SpellObj = {
             name: "Spell",
             address: addresses.Spell,
@@ -92,7 +98,6 @@ export default function Main() {
         };
         bump.push(SpellObj);
         const DogelonResult = await ETHERrequestAPI(addresses.Dogelon);
-        console.log(DogelonResult);
         const DogelonObj = {
             name: "Dogelon (ELON)",
             address: addresses.Dogelon,
@@ -103,7 +108,7 @@ export default function Main() {
     };
 
     const claimHandler = async () => {
-        alert("Claimed");
+        alert("claim");
     };
 
     return (

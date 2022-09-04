@@ -8,10 +8,17 @@ export default function Header() {
     var styledAddress = wallet.account
         ? wallet.account.slice(0, 4) + "..." + wallet.account.slice(-4)
         : "";
+    
 
     useEffect(() => {
         checkConnection();
     }, []);
+
+    useEffect(() => {
+        if (wallet.status === "error") {
+            alert("Please connect to correct chain");
+        }
+    }, [wallet.status]);
 
     const checkConnection = async () => {
         let { ethereum } = window;
